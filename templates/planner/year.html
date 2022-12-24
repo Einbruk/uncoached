@@ -1,0 +1,82 @@
+{% extends 'base_template.html' %}
+{% load i18n %}
+{% load static %}
+{% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <title>{% trans 'Sign up' %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <link rel="stylesheet" href="{% static '/css/base.css'%}">
+        <link rel="stylesheet" href="{% static '/css/landing_style.css'%}">
+        <link rel="stylesheet" href="{% static '/css/year_view.css'%}">
+        <link rel="icon" type="image/x-icon" href="{% static 'directions_bike.svg' %}">
+    </head>
+{% endblock %}
+{% block content %}
+    <div class="year-view year-nav">
+        {% include 'insert_year.html' %}
+    </div>
+    <div class="year-view">
+        <div class="year-container">
+            {% if not plan %}
+            <div class="does-not-exist">
+                <h3> You don't have a plan for this year, want to create? </h3>
+            </div>
+            <div class="creation">
+                <form action="/users/new_plan_{{year}}/"><button class="create-button">Create</button></form>
+            </div>
+            {% else %}
+            <h1 class="plan-header">{{plan.athlete.username}}'s plan for {{plan.year}}:</h1>
+            <div class="week-container">
+                <div class="week-left">
+                    <h3>Season goals:</h3>
+                    <p>{{plan.goals}}</p>
+                </div>
+                <div class="week-right">
+                    <h3>Training objectives:</h3>
+                    <p>{{plan.objectives}}</p>
+                </div>
+            </div>
+            <div class="week-container" >
+                <div class="week-left">
+                        <b> №: </b>
+                        <b> Monday: </b>
+                        <b> Period: </b>
+                        <b> Hrs:  </b>
+                </div>
+                <div class="week-right">
+                        <b> Race: </b>
+                        <b> Priority: </b>
+                        <b> Comments:  </b>
+                </div>
+            </div>
+
+            {% for week in plan.week_set.all %}
+                {% if week.week_no|divisibleby:2 %}
+                    <div class="week-container week-dark" tabindex="0">
+                {% else %}
+                    <div class="week-container week-light" tabindex="0">
+                {% endif%}
+                    <div class="week-left">
+                        <a href="week/{{week.week_no}}/" class="week-link">
+                            <p>{{week.week_no}}</p>
+                        </a>
+                        <p>{{week.starts_with}}</p>
+                        <p>{{week.period}}</p>
+                        <p>{{week.hrs_planned}}</p>
+                    </div>
+                    <div class="week-right">
+                        <p>{{week.race}}</p>
+                        <p>{{week.priority}}</p>
+                        <p>{{week.comments}}</p>
+                    </div>
+<!--                        {% for workout in week.workout_set.all %}-->
+<!--                                <p>{{workout.title}}: {{workout.duration_min}} {{workout.distance}} {{workout.type}}</p>-->
+<!--                        {% endfor %}-->
+                    </a>
+                    </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

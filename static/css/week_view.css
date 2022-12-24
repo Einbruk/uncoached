@@ -1,0 +1,66 @@
+
+.week-view {
+    display: flex;
+    min-height: 75vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.week-container {
+    margin: 1rem;
+    width: 90vw;
+    padding: .3rem;
+    /* box-shadow: 0 5px 5px rgba(0,0,0,0.2);*/
+}
+
+.plan-header {
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1.3rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.week-day {
+    margin: 2px;
+    padding: .2rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+
+.workout-container {
+    margin: 2px;
+    padding: .2rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+
+.workout-container p {
+    font-size: .8rem;
+}
+
+.workout-link {
+    text-decoration: none;
+    color: #332E33;
+}
+
+.done {
+    background: #67BE6C;
+}
+
+.not-done {
+    background: #c2ad17;
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -1,0 +1,24 @@
+.insert-container {
+    margin: .5rem;
+    width: 90vw;
+    height: 40px;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F9F7F6;
+    color: #332E33;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+
+.link-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.link-cont a:hover svg {
+    fill: #67BE6C;
+}

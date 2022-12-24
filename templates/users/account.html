@@ -1,0 +1,30 @@
+{% extends 'base_template.html' %}
+{% load i18n %}
+{% load static %}
+{% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <title>{% trans 'Account' %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <link rel="stylesheet" href="{% static '/css/base.css'%}">
+        <link rel="stylesheet" href="{% static '/css/users.css'%}">
+        <link rel="stylesheet" href="{% static '/css/landing_style.css'%}">
+        <link rel="icon" type="image/x-icon" href="{% static 'directions_bike.svg' %}">
+    </head>
+{% endblock %}
+{% block content %}
+    <div class="account-view-container">
+        <div class="account-view-left">
+            <ul class="account-list">
+                <li>{% trans 'Username' %}: {{ request.user.username }}</li>
+                <li>{% trans 'E-mail' %}: {{ request.user.email }}</li>
+                <li>{% trans 'Phone' %}: {{ request.user.phone }}</li>
+                <li>{% trans 'Name' %}: {{ request.user.first_name }}</li>
+                <li>{% trans 'Last name' %}: {{ request.user.last_name }}</li>
+            </ul>
+        </div>
+        <div class="account-view-right">
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,172 @@
+.form-background {
+    height: calc(100vh - 140px);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login classes here  */
+
+.errorlist {
+    width: 140px;
+    position: relative;
+    left: 10px;
+    font-size: .5rem;
+    line-height: .6rem;
+    color: #f44336;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    align: center;
+    background: #332E33;
+    color: #F9F7F6;
+    line-height: 1.5rem;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-1-login {
+    position: relative;
+    left: 9px;
+}
+
+.form-button {
+    height: 20px;
+    width: 55px;
+    border: none;
+    border-radius: 5px;
+    font-size: .9rem;
+    font-weight: 700;
+    background: #F9F7F6;
+    color: #332E33;
+}
+
+.form-button + .form-button {
+    margin-left: 35px;
+}
+
+input {
+    height: 25px;
+    font-size: .9rem;
+    width: 150px;
+    font-weight: 700;
+}
+
+.form-button:hover {
+    background: #67BE6C;
+    color: #F9F7F6;
+}
+
+/* Account view classes here  */
+
+
+.account-view-container {
+    height: 600px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem calc((100vw - 1300px) / 2);
+}
+
+.account-view-left{
+    margin-left: 2rem;
+    width: 500px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.account-list {
+    list-style-type: none;
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+        height: 600px;
+    }
+    .account-view-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Register page styles */
+
+.register-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form-box {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    align: center;
+    background: #F9F7F6;
+    color: #332E33;
+    line-height: 1.5rem;
+    border-radius: 5px;
+    width: 400px;
+    height: 600px;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.register-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.form-button-dark {
+    height: 20px;
+    width: 55px;
+    border: none;
+    border-radius: 5px;
+    font-size: .9rem;
+    font-weight: 700;
+    background: #332E33;
+    color: #F9F7F6;
+}
+
+.form-button-dark:hover {
+    background: #67BE6C;
+    color: #332E33;
+}
+
+.form-button-dark + .form-button-dark {
+    margin-left: 235px;
+}
+
+.bottom-buttons {
+    margin-top: 5px;
+}
+
+.helptext {
+    font-size: .7rem;
+    line-height: .9rem;
+    color: #f44336;
+}
+
+.helptext ul{
+    list-style-type: none;
+}
+
+.register-form-box input {
+    width: 350px;
+}

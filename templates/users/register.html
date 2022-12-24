@@ -1,0 +1,29 @@
+{% extends 'base_template.html' %}
+{% load i18n %}
+{% load static %}
+{% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <title>{% trans 'Sign up' %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <link rel="stylesheet" href="{% static '/css/base.css'%}">
+        <link rel="stylesheet" href="{% static '/css/users.css'%}">
+        <link rel="stylesheet" href="{% static '/css/landing_style.css'%}">
+        <link rel="icon" type="image/x-icon" href="{% static 'directions_bike.svg' %}">
+    </head>
+{% endblock %}
+{% block content %}
+    <div class="register-form-container">
+        <div class="register-form-box">
+            <form method="post" class="register-form">
+            <h1 class="register-header">Sign up for Uncoached</h1>
+            {% csrf_token %}
+            {{ form }}
+            <div class="bottom-buttons">
+                <button type="submit" class="form-button-dark"> {% trans 'Sign up' %}</button>
+                <button onclick="history.back()" class="form-button-dark"> {% trans 'Back' %}</button>
+            </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

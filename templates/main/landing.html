@@ -1,22 +1,29 @@
-<!DOCTYPE html>
+{% extends 'base_template.html'%}
 {% load i18n %}
-{% load static%}
+{% load static %}
 <html lang="en-EN">
+{% block head %}
 <head>
    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>{% trans 'Uncoached' %}</title>
+    <link rel="stylesheet" href="{% static '/css/base.css'%}">
     <link rel="stylesheet" href="{% static '/css/landing_style.css'%}">
     <link rel="icon" type="image/x-icon" href="{% static 'directions_bike.svg' %}">
+</head>
+{% endblock %}
 <body>
+    {% block header %}
     <nav>
         <img src="{% static 'uncoached.png' %}" alt="uncoached logo" class="main-logo">
         <div>
-        <a href="#get-started"> Get Started </a>
+        <a href="/users/login/"> Get Started </a>
         <a href="#about"> About </a>
         <a href="#contacts"> Contacts </a>
         </div>
     </nav>
+    {% endblock %}
+    {% block content %}
     <section class="hero">
         <div class="hero-container" id="get-started">
             <div class="column-left">
@@ -26,34 +33,22 @@
             </div>
             <div class="column-right">
                 <div class="image-box">
-                    <img src="{% static 'cycling.jpg'%}" class="hero-image">
+                    <img src="{% static 'cycling.svg'%}" class="hero-image">
                 </div>
             </div>
         </div>
         <div class="about-container"></div>
     </section>
     <div class="hero-2-container" id="about">
-            Hi
+        <div class="hero-2-left">
+            <h2> More than 10 years of experience in training from me,
+                only motivation is needed from you.</h2>
+
+        </div>
+        <div class="hero-2-right"></div>
     </div>
     <div class="hero-3-container" id="contacts">
     </div>
-
-
-    <footer class="footer">
-        <div class="copyright-pic">
-            <a href="/">
-                <img src="{% static 'bike_lite.svg'%}" alt="bike_light" class="bottom-logo">
-            </a>
-            &#169; 2022 Uncoached
-        </div>
-
-        <div class="footer-links">
-            <a href="/"> Contact us </a>
-            <a href="/"> link 2</a>
-            <a href="/"> link 3</a>
-        </div>
-
-    </footer>
-
+    {% endblock %}
 </body>
 </html>

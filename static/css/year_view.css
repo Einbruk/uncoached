@@ -1,0 +1,102 @@
+
+.year-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.year-nav {
+    padding-top: 1rem;
+}
+
+.year-container {
+    margin: 1rem;
+    width: 90vw;
+    min-height: 60vh;
+    padding: .3rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+
+.does-not-exist {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.creation {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-button {
+    border-radius: 3px;
+    border: none;
+    padding: 0.3rem;
+    background: #332E33;
+    color: #F9F7F6;
+}
+
+.create-button:hover {
+    background: #67BE6C;
+}
+
+.plan-header {
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+
+.week-container{
+    padding: .4rem;
+    font-size: .8rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.week-container:focus {
+    background: #AAA;
+
+}
+
+.week-left {
+    padding: .3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.week-right {
+    padding: .3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.week-dark {
+    background: #332E33;
+    color: #F9F7F6;
+}
+
+.week-dark .week-link {
+    text-decoration: none;
+    color: #F9F7F6;
+}
+
+.week-light {
+    background: #F9F7F6;
+    color: #332E33;
+}
+
+.week-light .week-link {
+    text-decoration: none;
+    color: #332E33;
+}
+
+
+@media screen and (max-width: 768px) {
+    .week-container {
+        grid-template-columns: 1fr;
+    }
+}

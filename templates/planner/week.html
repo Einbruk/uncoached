@@ -1,0 +1,53 @@
+{% extends 'base_template.html' %}
+{% load i18n %}
+{% load static %}
+{% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <title>{% trans 'Sign up' %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <link rel="stylesheet" href="{% static '/css/base.css'%}">
+        <link rel="stylesheet" href="{% static '/css/landing_style.css'%}">
+        <link rel="stylesheet" href="{% static '/css/week_view.css'%}">
+        <link rel="icon" type="image/x-icon" href="{% static 'directions_bike.svg' %}">
+    </head>
+{% endblock %}
+{% block content %}
+    <div class="week-view">
+        <div class="week-container">
+            <h1 class="plan-header">Week № {{week.week_no}} from {{week.starts_with}}  Hrs planned: {{week.hrs_planned}} </h1>
+            <div class="container">
+                {% for day in days %}
+                <div class="week-day">
+                    <p class="day-heading">{{ day.week_day }}: {{ day.day.day }}.{{ day.day.month }}</p>
+
+                    <hr>
+                    {% for workout in workouts %}
+                        {% if workout.day == day %}
+                        <a href="" class="workout-link">
+                            {% if workout.distance %}
+                            <div class="workout-container done">
+                            {% else %}
+                            <div class="workout-container not-done">
+                            {% endif %}
+                                <p><b>{{ workout.title }}</b></p>
+                                <p style="font-size: .5rem;">{{ workout.type }}</p>
+                                <p>{{ workout.duration_min }} min</p>
+                                <p>{{ workout.distance }} km</p>
+                                <p>PE: {{ workout.pe }}/10</p>
+                            </div>
+                        </a>
+                        {%endif%}
+                    {% endfor %}
+                </div>
+                {% endfor %}
+                <div class="week-day">
+                    <b> Total: </b>
+                    <hr>
+                    <p> {{ week.hrs_fact }} H </p>
+                    <p> {{ week.km_fact }} km </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
