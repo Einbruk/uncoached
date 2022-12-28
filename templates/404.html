@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-        <title>{% trans 'Uncoached' %}</title>
+        <title>Uncoached</title>
         <link rel="stylesheet" href="{% static '/css/base.css'%}">
         <link rel="stylesheet" href="{% static '/css/errors.css'%}">
         <link rel="stylesheet" href="{% static '/css/landing_style.css'%}">
@@ -16,7 +16,7 @@
     <div class="content">
       <div class="err-template">
         <p class="err-code"> 404 </p>
-        <h1 class="err-text"> Sorry, this Page is not found </h1>
+        <h1 class="err-text"> {% trans 'Sorry, this Page is not found' %} </h1>
       </div>
     </div>
 {% endblock %}

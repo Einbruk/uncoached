@@ -10,7 +10,6 @@
     margin: 1rem;
     width: 90vw;
     padding: .3rem;
-    /* box-shadow: 0 5px 5px rgba(0,0,0,0.2);*/
 }
 
 .plan-header {
@@ -51,6 +50,18 @@
 
 .not-done {
     background: #c2ad17;
+}
+
+.add-wo-container {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    min-height: 20px;
+}
+
+.add-wo {
+    background:
 }
 
 @media screen and (max-width: 1000px) {

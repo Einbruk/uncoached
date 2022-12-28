@@ -16,7 +16,7 @@
     <div class="register-form-container">
         <div class="register-form-box">
             <form method="post" class="register-form">
-            <h1 class="register-header">Create new plan</h1>
+            <h1 class="register-header">{% trans 'Create new plan' %}</h1>
             {% csrf_token %}
             {{ form }}
             <div class="bottom-buttons">

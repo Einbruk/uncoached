@@ -59,7 +59,6 @@
 
 .week-container:focus {
     background: #AAA;
-
 }
 
 .week-left {
@@ -92,6 +91,22 @@
 .week-light .week-link {
     text-decoration: none;
     color: #332E33;
+}
+
+.week-dark .edit-week-svg {
+    fill: #332E33;
+}
+
+.week-dark .edit-week-svg:hover {
+    fill: #F9F7F6;
+}
+
+.week-light .edit-week-svg {
+    fill: #F9F7F6;
+}
+
+.week-light .edit-week-svg:hover {
+    fill: #332E33;
 }
 
 

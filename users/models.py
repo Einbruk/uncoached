@@ -33,9 +33,9 @@ class Week(models.Model):
     hrs_fact = models.FloatField(default=0, blank=True, null=True)
     km_fact = models.IntegerField(default=0, blank=True, null=True)
     year = models.ForeignKey(Year, on_delete=models.CASCADE)
-    comment = models.CharField(max_length=80, default=None, blank=True, null=True)
-    race = models.CharField(max_length=40, default=None, blank=True, null=True)
-    priority = models.CharField(max_length=1, default=None, blank=True, null=True)
+    comment = models.CharField(max_length=80, default='', blank=True, null=True)
+    race = models.CharField(max_length=40, default='', blank=True, null=True)
+    priority = models.CharField(max_length=1, default='', blank=True, null=True)
 
     class Meta:
         db_table = 'week'
@@ -60,10 +60,10 @@ class Workout(models.Model):
     task = models.TextField(max_length=400)
     feelings = models.TextField(max_length=400, default='-', null=True, blank=True)
     duration_min = models.IntegerField()
-    distance = models.FloatField(default=0, null=True)
+    distance = models.FloatField(default=0)
     alt_gain = models.IntegerField(default=0)
-    started_at = models.DateTimeField(default=None)
-    pe = models.IntegerField(default=None)
+    started_at = models.DateTimeField(default=None, null=True, blank=True)
+    pe = models.IntegerField(default=None, null=True, blank=True)
     day = models.ForeignKey(Day, on_delete=models.CASCADE)
     week = models.ForeignKey(Week, on_delete=models.CASCADE, default=None)
 

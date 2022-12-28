@@ -6,8 +6,6 @@
     align-items: center;
 }
 
-/* Login classes here  */
-
 .errorlist {
     width: 140px;
     position: relative;
@@ -37,20 +35,7 @@
     left: 9px;
 }
 
-.form-button {
-    height: 20px;
-    width: 55px;
-    border: none;
-    border-radius: 5px;
-    font-size: .9rem;
-    font-weight: 700;
-    background: #F9F7F6;
-    color: #332E33;
-}
 
-.form-button + .form-button {
-    margin-left: 35px;
-}
 
 input {
     height: 25px;
@@ -59,48 +44,6 @@ input {
     font-weight: 700;
 }
 
-.form-button:hover {
-    background: #67BE6C;
-    color: #F9F7F6;
-}
-
-/* Account view classes here  */
-
-
-.account-view-container {
-    height: 600px;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 1rem calc((100vw - 1300px) / 2);
-}
-
-.account-view-left{
-    margin-left: 2rem;
-    width: 500px;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
-}
-
-.account-list {
-    list-style-type: none;
-}
-
-@media screen and (max-width: 768px) {
-    .hero {
-        padding-top: 100px;
-        height: 600px;
-    }
-    .account-view-container {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* Register page styles */
 
@@ -122,7 +65,6 @@ input {
     line-height: 1.5rem;
     border-radius: 5px;
     width: 400px;
-    height: 600px;
     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -173,7 +115,6 @@ input {
 
 .register-form-box textarea {
     width: 350px;
-    height: 100px;
 }
 
 .register-form-box label {
