@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load i18n %}
 {% load static %}
+{% load cache %}
 <html lang="en">
 {% block head %}
 <head>
@@ -13,6 +14,7 @@
 </head>
 {% endblock %}
 <body>
+{% cache 500 header %}
 {% block header %}
     <header class="header-smth">
         <a href="/"><img src="{% static 'uncoached.png' %}" alt="uncoached logo" class="main-logo"></a>
@@ -36,8 +38,11 @@
     </header>
 
 {% endblock %}
+{% endcache %}
 {% block content %}
 {% endblock %}
+
+{% cache 500 footer %}
 {% block footer %}
     <footer class="footer">
         <div class="copyright-pic">
@@ -69,5 +74,6 @@
         </div>
     </footer>
 {% endblock %}
+{% endcache %}
 </body>
 </html>

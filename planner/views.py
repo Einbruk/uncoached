@@ -1,10 +1,11 @@
 import datetime
-
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
 from users.models import Year, Week, User, Workout, Day
 from planner.forms import WeekEditForm, WorkoutCreateForm, WorkoutEditForm
+
+
 
 class YearView(View):
     def get(self, request, year):
@@ -56,7 +57,6 @@ class WeekEditView(View):
             form.save()
             return HttpResponseRedirect(f'/year/{year}/')
         return render(request, 'planner/week-edit.html', {'form': form})
-
 
 class WorkoutCreateView(View):
     def get(self, request, year, week, day, month):

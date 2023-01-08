@@ -1,5 +1,4 @@
 from time import sleep
-
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import LoginView, LogoutView
 from django.http import HttpResponseRedirect
@@ -8,7 +7,7 @@ from django.views import View
 from users.forms import ExtendedRegister, SurveyFormShort
 from .planner import create_plan
 
-# Create your views here.
+
 class UserLoginView(LoginView):
     template_name = 'users/login.html'
     next_page = '/'
